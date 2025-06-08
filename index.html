@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css" />
+  <link rel="stylesheet" href="assets/css/featureProducts.css" />
+  <link rel="stylesheet" href="assets/css/cardStyle.css" />
+  <link rel="stylesheet" href="assets/css/customerSays.css" />
+  <link rel="stylesheet" href="assets/css/productView.css">
+  <link rel="stylesheet" href="assets/css/populerProduct.css" />
+  <link rel="stylesheet" href="assets/css/bottomFeatureProduct.css">
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <!-- <link rel="stylesheet" href="assets/css/searchFilter.css" /> -->
+
+  <!--   tailwind css  -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/owl-carousel/owl.carousel.min.css" />
+  <link rel="stylesheet" href="assets/owl-carousel/owl.theme.default.min.css" />
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container navContainer">
+      <a class="navbar-brand" href="#">
+        <img class="brand-logo lineLogo" src="assets/images/lineLogo.svg" alt="logo" />
+      </a>
+
+      <div class="searchBar">
+        <form class="searchForm" role="search">
+          <!-- drop down -->
+          <!-- comment -->
+          <div class="dropdown">
+            <button class="catagoryBtnSearchBar catagoryBtn" type="button">
+              All categories
+              <div class="dropDownIcon"><i class="fa-solid fa-angle-down"></i></div>
+            </button>
+            <div class="searchBoxDropdown" aria-labelledby="dropdownMenuButton">
+              <ul>
+                <li><a href="">Sharee</a></li>
+                <li><a href="">Borkha</a></li>
+                <li><a href="">Shirt</a></li>
+                <li><a href="">Pant</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- drop down end -->
+          <input id="search" class="searchBox" type="search" placeholder="Search products, categories..."
+            aria-label="Search" />
+
+          <button class="SearchBtn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+
+
+      </div>
+
+      <div class="userTopBtn">
+        <div class="userLogin">
+          <button class="loginBtn">
+            <i class="fa-regular fa-user"></i>
+            <p class="loginText">Login</p>
+          </button>
+        </div>
+        <!-- language change button -->
+        <div class="switch switchBtnTop">
+          <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox" />
+          <label for="language-toggle"></label>
+          <span class="on">BN</span>
+          <span class="off">EN</span>
+        </div>
+        <!-- end -->
+      </div>
+    </div>
+  </nav>
+  <!-- for responsive menu -->
+  <div class="phoneMenu">
+    <div class="container phoneNavContainer">
+      <div class="menuBarBtn">
+        <button onclick="toggleSideMenuBar()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="searchBar">
+        <form class="searchForm" role="search">
+          <!-- drop down -->
+
+          <div class="dropdown">
+            <button class="catagoryBtnSearchBar catagoryBtn" type="button">
+              <span class="allCategoryText">All categories</span>
+              <div class="dropDownIcon"><i class="fa-solid fa-angle-down"></i></div>
+            </button>
+            <div class="searchBoxDropdown" aria-labelledby="dropdownMenuButton">
+              <ul>
+                <li><a href="">Sharee</a></li>
+                <li><a href="">Borkha</a></li>
+                <li><a href="">Shirt</a></li>
+                <li><a href="">Pant</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- drop down end -->
+          <input class="searchBox" type="search" placeholder="Search products, categories..." aria-label="Search" />
+          <button class="SearchBtn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- mid content -->
+  <div class="midContent">
+    <div class="sideBar">
+      <!-- language change button -->
+      <div class="switchPhoneMenu">
+        <div class="switch">
+          <input id="language-toggle-Mbl" class="check-toggle check-toggle-round-flat" type="checkbox" />
+          <label for="language-toggle-Mbl"></label>
+          <span class="on">BN</span>
+          <span class="off">EN</span>
+        </div>
+      </div>
+      <!-- end -->
+      <button class="sideBarCloseBtn" onclick="toggleSideMenuBar()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="productCategories">
+        <h3>Categories</h3>
+        <ul class="drawerCategoryMenu" id="drawerCategoryMenu">
+          <li class="subCategoryItem"><a href="#">Man's Fashion
+              <div class="dropDownIcon">
+                <i class="fa-solid fa-angle-right angleRight"></i>
+              </div>
+              <ul class="subCategoryMenu">
+                <li><a href="">Shirt</a></li>
+                <li><a href="">Pant</a></li>
+                <li><a href="">T-shirt</a></li>
+              </ul>
+            </a></li>
+          <li class="subCategoryItem"><a href="#">Woman's Fashion
+              <div class="dropDownIcon">
+                <i class="fa-solid fa-angle-right angleRight"></i>
+              </div>
+              <ul class="subCategoryMenu">
+                <li><a href="">sharee</a></li>
+                <li><a href="">three pice</a></li>
+                <li><a href="">borkha</a></li>
+              </ul>
+            </a></li>
+          <li><a href="">Electronics</a></li>
+          <li><a href="">Home & lifestyle</a></li>
+          <li><a href="">Sports & Outdoors</a></li>
+          <li><a href="">Medicine</a></li>
+          <li><a href="">Baby's & Toy</a></li>
+          <li><a href="">Gloceries & Pets</a></li>
+          <li><a href="">Health & Beauty</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <div class="overlay"></div>
+
+    <div class="productsBox">
+
+
+      <div class="carouselBox">
+        <div class="topCarousel owl-carousel owl-theme">
+          <div class="topCarouselItem"><img src="assets/images/product2.png" alt=""></div>
+          <div class="topCarouselItem"><img src="assets/images/product2.png" alt=""></div>
+          <div class="topCarouselItem"><img src="assets/images/product2.png" alt=""></div>
+          <div class="topCarouselItem"><img src="assets/images/product2.png" alt=""></div>
+          <div class="topCarouselItem"><img src="assets/images/product2.png" alt=""></div>
+        </div>
+      </div>
+
+      <!-- heading -->
+      <div class="header-category">
+        <div class="box-pointer"></div>
+        <div class="header-category-title">
+          <h6>Our Product's</h6>
+        </div>
+
+      </div>
+      <div class="our-feature-product-header">
+        <h1>Explore Our Products</h1>
+      </div>
+
+      <div class="allProducts">
+        <!-- card design -->
+        <div class="productItem">
+          <div class="wrapper">
+            <div class="pic-wrapper">
+              <div class="negative-percentage">
+                <p>-36%</p>
+              </div>
+              <div class="product-pic">
+                <img src="assets/images/product3.svg" alt="" />
+              </div>
+            </div>
+            <div class="title-price-wrapper">
+              <h3 class="product-title">Product Title</h3>
+
+              <div class="rate-buy-now-wrapper">
+                <div class="price-wrapper">
+                  <h2 class="price">1.48 ৳</h2>
+                  <div class="closePriceAndCategory">
+                    <del class="crossed-price">180</del>
+                    <div class="regional-tag">
+                      <p>IND</p>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="buy-now-button">Buy now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="productItem col-md-3 col-sm-4 col-xsm-6">
+          <div class="wrapper">
+            <div class="pic-wrapper">
+              <div class="negative-percentage">
+                <p>-36%</p>
+              </div>
+              <div class="product-pic">
+                <img src="assets/images/product3.svg" alt="" />
+              </div>
+            </div>
+            <div class="title-price-wrapper">
+              <h3 class="product-title">Product Title</h3>
+
+              <div class="rate-buy-now-wrapper">
+                <div class="price-wrapper">
+                  <h2 class="price">1.48 ৳</h2>
+                  <div class="closePriceAndCategory">
+                    <del class="crossed-price">180</del>
+                    <div class="regional-tag">
+                      <p>IND</p>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="buy-now-button">Buy now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="productItem col-md-3 col-sm-4 col-xsm-6">
+          <div class="wrapper">
+            <div class="pic-wrapper">
+              <div class="negative-percentage">
+                <p>-36%</p>
+              </div>
+              <div class="product-pic">
+                <img src="assets/images/product3.svg" alt="" />
+              </div>
+            </div>
+            <div class="title-price-wrapper">
+              <h3 class="product-title">Product Title</h3>
+
+              <div class="rate-buy-now-wrapper">
+                <div class="price-wrapper">
+                  <h2 class="price">1.48 ৳</h2>
+                  <div class="closePriceAndCategory">
+                    <del class="crossed-price">180</del>
+                    <div class="regional-tag">
+                      <p>IND</p>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="buy-now-button">Buy now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="productItem col-md-3 col-sm-4 col-xsm-6">
+          <div class="wrapper">
+            <div class="pic-wrapper">
+              <div class="negative-percentage">
+                <p>-36%</p>
+              </div>
+              <div class="product-pic">
+                <img src="assets/images/product3.svg" alt="" />
+              </div>
+            </div>
+            <div class="title-price-wrapper">
+              <h3 class="product-title">Product Title</h3>
+
+              <div class="rate-buy-now-wrapper">
+                <div class="price-wrapper">
+                  <h2 class="price">1.48 ৳</h2>
+                  <div class="closePriceAndCategory">
+                    <del class="crossed-price">180</del>
+                    <div class="regional-tag">
+                      <p>IND</p>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="buy-now-button">Buy now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="productItem col-md-3 col-sm-4 col-xsm-6">
+          <div class="wrapper">
+            <div class="pic-wrapper">
+              <div class="negative-percentage">
+                <p>-36%</p>
+              </div>
+              <div class="product-pic">
+                <img src="assets/images/product3.svg" alt="" />
+              </div>
+            </div>
+            <div class="title-price-wrapper">
+              <h3 class="product-title">Product Title</h3>
+
+              <div class="rate-buy-now-wrapper">
+                <div class="price-wrapper">
+                  <h2 class="price">1.48 ৳</h2>
+                  <div class="closePriceAndCategory">
+                    <del class="crossed-price">180</del>
+                    <div class="regional-tag">
+                      <p>IND</p>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="buy-now-button">Buy now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="productItem col-md-3 col-sm-4 col-xsm-6">
+          <div class="wrapper">
+            <div class="pic-wrapper">
+              <div class="negative-percentage">
+                <p>-36%</p>
+              </div>
+              <div class="product-pic">
+                <img src="assets/images/product3.svg" alt="" />
+              </div>
+            </div>
+            <div class="title-price-wrapper">
+              <h3 class="product-title">Product Title</h3>
+
+              <div class="rate-buy-now-wrapper">
+                <div class="price-wrapper">
+                  <h2 class="price">1.48 ৳</h2>
+                  <div class="closePriceAndCategory">
+                    <del class="crossed-price">180</del>
+                    <div class="regional-tag">
+                      <p>IND</p>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="buy-now-button">Buy now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="productItem col-md-3 col-sm-4 col-xsm-6">
+          <div class="wrapper">
+            <div class="pic-wrapper">
+              <div class="negative-percentage">
+                <p>-36%</p>
+              </div>
+              <div class="product-pic">
+                <img src="assets/images/product3.svg" alt="" />
+              </div>
+            </div>
+            <div class="title-price-wrapper">
+              <h3 class="product-title">Product Title</h3>
+
+              <div class="rate-buy-now-wrapper">
+                <div class="price-wrapper">
+                  <h2 class="price">1.48 ৳</h2>
+                  <div class="closePriceAndCategory">
+                    <del class="crossed-price">180</del>
+                    <div class="regional-tag">
+                      <p>IND</p>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="buy-now-button">Buy now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="productItem col-md-3 col-sm-4 col-xsm-6">
+          <div class="wrapper">
+            <div class="pic-wrapper">
+              <div class="negative-percentage">
+                <p>-36%</p>
+              </div>
+              <div class="product-pic">
+                <img src="assets/images/product3.svg" alt="" />
+              </div>
+            </div>
+            <div class="title-price-wrapper">
+              <h3 class="product-title">Product Title</h3>
+
+              <div class="rate-buy-now-wrapper">
+                <div class="price-wrapper">
+                  <h2 class="price">1.48 ৳</h2>
+                  <div class="closePriceAndCategory">
+                    <del class="crossed-price">180</del>
+                    <div class="regional-tag">
+                      <p>IND</p>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="buy-now-button">Buy now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- card end -->
+      </div>
+    </div>
+  </div>
+
+
+  <div class="featureProduct">
+    <div class="featureBox1">
+      <img src="assets/images/1.svg" alt="" />
+      <div class="featureContent1">
+        <div class="featureContentText1">
+          <button class="fetureBtn">
+            Read More <span><i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+    <div class="featureBox2">
+      <img src="assets/images/2.svg" alt="" />
+      <div class="featureContent2">
+        <div class="featureContentText2">
+          <button class="fetureBtn">
+            Read More <span><i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- populer product section -->
+  <div class="populerProductBox">
+    <div class="header-category">
+      <div class="box-pointer"></div>
+      <div class="header-category-title">
+        <h6>Populer's</h6>
+      </div>
+    </div>
+
+    <div class="our-feature-product-header">
+      <h1>Populer Products</h1>
+    </div>
+
+    <div class="PopulerProducts owl-carousel">
+      <!-- product card start -->
+      <div class="populerItem ">
+        <div class="wrapper">
+          <div class="pic-wrapper">
+            <div class="negative-percentage">
+              <p>-36%</p>
+            </div>
+            <div class="product-pic">
+              <img src="assets/images/product3.svg" alt="" />
+            </div>
+          </div>
+          <div class="title-price-wrapper">
+            <h3 class="product-title">Product Title</h3>
+
+            <div class="rate-buy-now-wrapper">
+              <div class="price-wrapper">
+                <h2 class="price">1.48 ৳</h2>
+                <div class="closePriceAndCategory">
+                  <del class="crossed-price">180</del>
+                  <div class="regional-tag">
+                    <p>IND</p>
+                  </div>
+                </div>
+              </div>
+
+              <button class="buy-now-button">Buy now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="populerItem ">
+        <div class="wrapper">
+          <div class="pic-wrapper">
+            <div class="negative-percentage">
+              <p>-36%</p>
+            </div>
+            <div class="product-pic">
+              <img src="assets/images/product3.svg" alt="" />
+            </div>
+          </div>
+          <div class="title-price-wrapper">
+            <h3 class="product-title">Product Title</h3>
+
+            <div class="rate-buy-now-wrapper">
+              <div class="price-wrapper">
+                <h2 class="price">1.48 ৳</h2>
+                <div class="closePriceAndCategory">
+                  <del class="crossed-price">180</del>
+                  <div class="regional-tag">
+                    <p>IND</p>
+                  </div>
+                </div>
+              </div>
+
+              <button class="buy-now-button">Buy now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="populerItem ">
+        <div class="wrapper">
+          <div class="pic-wrapper">
+            <div class="negative-percentage">
+              <p>-36%</p>
+            </div>
+            <div class="product-pic">
+              <img src="assets/images/product3.svg" alt="" />
+            </div>
+          </div>
+          <div class="title-price-wrapper">
+            <h3 class="product-title">Product Title</h3>
+
+            <div class="rate-buy-now-wrapper">
+              <div class="price-wrapper">
+                <h2 class="price">1.48 ৳</h2>
+                <div class="closePriceAndCategory">
+                  <del class="crossed-price">180</del>
+                  <div class="regional-tag">
+                    <p>IND</p>
+                  </div>
+                </div>
+              </div>
+
+              <button class="buy-now-button">Buy now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="populerItem">
+        <div class="wrapper">
+          <div class="pic-wrapper">
+            <div class="negative-percentage">
+              <p>-36%</p>
+            </div>
+            <div class="product-pic">
+              <img src="assets/images/img.jpeg" alt="" />
+            </div>
+          </div>
+          <div class="title-price-wrapper">
+            <h3 class="product-title">Product Title</h3>
+
+            <div class="rate-buy-now-wrapper">
+              <div class="price-wrapper">
+                <h2 class="price">1.48 ৳</h2>
+                <div class="closePriceAndCategory">
+                  <del class="crossed-price">180</del>
+                  <div class="regional-tag">
+                    <p>IND</p>
+                  </div>
+                </div>
+              </div>
+
+              <button class="buy-now-button">Buy now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="populerItem ">
+        <div class="wrapper">
+          <div class="pic-wrapper">
+            <div class="negative-percentage">
+              <p>-36%</p>
+            </div>
+            <div class="product-pic">
+              <img src="assets/images/img.jpeg" alt="" />
+            </div>
+          </div>
+          <div class="title-price-wrapper">
+            <h3 class="product-title">Product Title</h3>
+
+            <div class="rate-buy-now-wrapper">
+              <div class="price-wrapper">
+                <h2 class="price">1.48 ৳</h2>
+                <div class="closePriceAndCategory">
+                  <del class="crossed-price">180</del>
+                  <div class="regional-tag">
+                    <p>IND</p>
+                  </div>
+                </div>
+              </div>
+
+              <button class="buy-now-button">Buy now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="populerItem">
+        <div class="wrapper">
+          <div class="pic-wrapper">
+            <div class="negative-percentage">
+              <p>-36%</p>
+            </div>
+            <div class="product-pic">
+              <img src="assets/images/img.jpeg" alt="" />
+            </div>
+          </div>
+          <div class="title-price-wrapper">
+            <h3 class="product-title">Product Title</h3>
+
+            <div class="rate-buy-now-wrapper">
+              <div class="price-wrapper">
+                <h2 class="price">1.48 ৳</h2>
+                <div class="closePriceAndCategory">
+                  <del class="crossed-price">180</del>
+                  <div class="regional-tag">
+                    <p>IND</p>
+                  </div>
+                </div>
+              </div>
+
+              <button class="buy-now-button">Buy now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- fature box for mobile device -->
+  <div class="featureProduct featureProductMbl">
+    <div class="featureBox2 featureBox2Mbl">
+      <img src="assets/images/2.svg" alt="" />
+      <div class="featureContent2">
+        <div class="featureContentText2">
+          <button class="fetureBtn">
+            Read More <span><i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- features product section from farhan -->
+  <div class="bottomFeatureProducts">
+    <div class="header-category">
+      <div class="box-pointer"></div>
+      <div class="header-category-title">
+        <h6>Feature's</h6>
+      </div>
+    </div>
+    <div class="our-feature-product-header">
+      <h1>Feature Products</h1>
+    </div>
+
+    <div class="new-arival-products">
+      <div class="left-large">
+        <a href="">
+          <img src="assets/images/left-large.svg" alt="" />
+        </a>
+      </div>
+
+      <div class="right-wrapper">
+        <div class="right-top">
+          <a href="">
+            <img src="assets/images/right-top.svg" alt="" />
+          </a>
+        </div>
+        <div class="right-bottom-wrapper">
+          <div class="right-bottom-left">
+            <a href="">
+              <img src="assets/images/right-bottom-left.svg" alt="" />
+            </a>
+          </div>
+          <div class="right-bottom-right">
+            <a href="">
+              <img src="assets/images/right-bottom-right.svg" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <!-- end -->
+
+  <!-- cutomer says section here -->
+  <div class="customerSays">
+    <div class="saysHead">
+      <div class="header-category">
+        <div class="box-pointer"></div>
+        <div class="header-category-title">
+          <h6>Customer's</h6>
+        </div>
+      </div>
+
+      <div class="our-feature-product-header">
+        <h1>Our Customer Says</h1>
+      </div>
+    </div>
+
+    <!-- carousel -->
+
+    <div class="owl-carousel quoteCarousel">
+      <div class="quote-card">
+        <h3>
+          "Mela kicui likha thakbe dreamssel somporke. customer ra likhbe j
+          eta ekta valo site melai valo site. apnara sobai product kinen."
+        </h3>
+        <p>Md Nuruzzaman Emon</p>
+        <img src="assets/images/emon.jpg" alt="" />
+      </div>
+      <div class="quote-card">
+        <h3>
+          "Mela kicui likha thakbe dreamssel somporke. customer ra likhbe j
+          eta ekta valo site melai valo site. apnara sobai product kinen."
+        </h3>
+        <p>Md Nuruzzaman Emon</p>
+        <img src="assets/images/emon.jpg" alt="" />
+      </div>
+      <div class="quote-card">
+        <h3>
+          "Mela kicui likha thakbe dreamssel somporke. customer ra likhbe j
+          eta ekta valo site melai valo site. apnara sobai product kinen."
+        </h3>
+        <p>Md Nuruzzaman Emon</p>
+        <img src="assets/images/emon.jpg" alt="" />
+      </div>
+      <div class="quote-card">
+        <h3>
+          "Mela kicui likha thakbe dreamssel somporke. customer ra likhbe j
+          eta ekta valo site melai valo site. apnara sobai product kinen."
+        </h3>
+        <p>Md Nuruzzaman Emon</p>
+        <img src="assets/images/emon.jpg" alt="" />
+      </div>
+      <div class="quote-card">
+        <h3>
+          "Mela kicui likha thakbe dreamssel somporke. customer ra likhbe j
+          eta ekta valo site melai valo site. apnara sobai product kinen."
+        </h3>
+        <p>Md Nuruzzaman Emon</p>
+        <img src="assets/images/emon.jpg" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <!-- footer start -->
+
+  <div class="footer">
+    <div class="footerLinks">
+      <div class="addressBox">
+        <h3>Our Office</h3>
+        <address>
+          <p>Mirpur-10</p>
+          <p>Dhaka-1216, Bangladesh</p>
+          <p>Whatsapp: 01712-345678</p>
+        </address>
+      </div>
+      <div class="connections">
+        <h3>Connecctions</h3>
+        <ul>
+          <li><a href="#"><span><i class="fa-brands fa-facebook"></i></span> Facebook</a></li>
+          <li><a href="#"><span><i class="fa-brands fa-x-twitter"></i></span> Twiter</a></li>
+          <li><a href="#"><span><i class="fa-brands fa-youtube"></i></span> Youtube</a></li>
+        </ul>
+      </div>
+      <div class="earnings">
+        <h3>Become a Reseller</h3>
+        <p>Whatsapp: 01712-345678</p>
+        <p>address@gmail.com</p>
+        <p>or</p>
+        <a class="footerLogin" href="#">login</a>
+      </div>
+      <div class="pirhotechAdd">
+        <h3>Developed By</h3>
+        <img src="assets/images/whitelogoPiRhoTech.svg" alt="" />
+      </div>
+    </div>
+
+    <div class="footerCopyRight">
+      <p>
+        Copyright &copy 2023 <a href="javascript:void(0);" class="text-success">Dreamssel</a>. Developed with <span
+          class="fa fa-heart text-danger"></span> by <a class="text-success" href="https://www.pirhotech.com"> PiRhoTech
+        </a> All rights reserved.
+      </p>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="assets/js/index.js"></script>
+  <script src="assets/js/productView.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="assets/owl-carousel/owl.carousel.min.js"></script>
+  <!--     <script src="assets/js/searchFiter.js"></script> -->
+</body>
+
+</html>
