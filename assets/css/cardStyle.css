@@ -19,11 +19,7 @@ p {
 }
 .populerItem .wrapper
 {
-<<<<<<< HEAD
-    width: 200px;
-=======
     margin: 0 10px !important;
->>>>>>> 3ff5dc60c10bd47cff7777196e88773d02f3727e
 }
 
 .wrapper:hover {
@@ -42,10 +38,7 @@ p {
     position: relative;
 
 }
-.populerItem .pic-wrapper
-{
-    height: 200px;
-}
+
 .negative-percentage {
     width: max-content;
     margin: 0px 0 0 0px;
@@ -67,10 +60,6 @@ p {
     width: auto;
     transform: scale(1);
     transition: transform .5s ease, height 0.2s ease;
-}
-.populerItem .product-pic
-{
-    height: 200px;
 }
 
 
@@ -494,16 +483,6 @@ p {
         width: 50%;
     }
 }
-<<<<<<< HEAD
-@media (max-width: 576px)
-{
-    .col-xsm-6 {
-        flex: 0 0 auto;
-        width: 50%;
-    }
-}
-=======
->>>>>>> 3ff5dc60c10bd47cff7777196e88773d02f3727e
 
 /* @media screen and (max-width: 420px)
 {
